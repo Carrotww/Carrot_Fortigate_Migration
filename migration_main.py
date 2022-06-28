@@ -19,6 +19,11 @@ file = open('C:\\Users\\K1220006\\Desktop\\미디어윌 ASA 5505.txt', mode='r')
 file_data = file.read().splitlines()
 
 forti_addr = [x for x in file_data if 'network-object' in x]
+forti_addr = [x.lstrip() for x in forti_addr]
+for i in forti_addr:
+    pass  # is not in subnet each element, + /32 or is there subnet, then store another list
+print('config firewall Address', '\n', 'edit name {0}', '\n\t', 'set subnet {1}', '\n',
+      'next')
 end_time = time.time()
 
 print(forti_addr)
