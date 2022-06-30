@@ -26,7 +26,11 @@ print('config firewall Address', '\n', 'edit name {0}', '\n\t', 'set subnet {1}'
       'next')
 end_time = time.time()
 
-print(forti_addr)
+addr_test = forti_addr[0]
+
+print(addr_test)
+
+# print(forti_addr)
 print(f"{end_time - start_time: .5f} sec")
 
 # while line != '':
