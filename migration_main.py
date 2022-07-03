@@ -15,9 +15,9 @@ forti_route = []
 line = None
 
 start_time = time.time()
-file = open('C:\\Users\\K1220006\\Desktop\\미디어윌 ASA 5505.txt', mode='r')
+file = open('C:\\Users\\K1220004\\Desktop\\미디어윌 ASA 5505.txt', mode='r')
 file_data = file.read().splitlines()
-
+#
 forti_addr = [x for x in file_data if 'network-object' in x]
 forti_addr = [x.lstrip() for x in forti_addr]
 for i in forti_addr:
@@ -35,8 +35,11 @@ print(f"{end_time - start_time: .5f} sec")
 
 # while line != '':
 #     line = file.readline()
-#     if 'network-object' in line:
-#         print(line)
+#     line2 = line.rstrip('\n')
+#     if 'network-object' in line2:
+#         forti_addr.append(line2)
+#         print(line2)
 #     elif 'object-group network' in line:
 #         pass
-#
+
+print(forti_addr)
