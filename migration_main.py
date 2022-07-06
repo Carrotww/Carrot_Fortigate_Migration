@@ -15,24 +15,19 @@ forti_route = []
 line = None
 
 start_time = time.time()
-file = open('C:\\Users\\K1220004\\Desktop\\미디어윌 ASA 5505.txt', mode='r')
+file = open('C:\\Users\\hsyu5\\Desktop\\미디어윌 ASA 5505 본체.txt', mode='r')
 file_data = file.read().splitlines()
 #
 forti_addr = [x for x in file_data if 'network-object' in x]
 forti_addr = [x.lstrip() for x in forti_addr]
-for i in forti_addr:
-    pass  # is not in subnet each element, + /32 or is there subnet, then store another list
+for i in forti_addr:  # is not in subnet each element, + /32 or is there subnet, then store another list
+    if
 print('config firewall Address', '\n', 'edit name {0}', '\n\t', 'set subnet {1}', '\n',
       'next')
+
 end_time = time.time()
 
-addr_test = forti_addr[0]
-
-print(addr_test)
-
-# print(forti_addr)
 print(f"{end_time - start_time: .5f} sec")
-
 # while line != '':
 #     line = file.readline()
 #     line2 = line.rstrip('\n')
@@ -41,5 +36,3 @@ print(f"{end_time - start_time: .5f} sec")
 #         print(line2)
 #     elif 'object-group network' in line:
 #         pass
-
-print(forti_addr)
