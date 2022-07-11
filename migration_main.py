@@ -1,5 +1,6 @@
 import sys
 import math
+import re
 import time
 
 # file_lo = input('파일의 경로를 입력하세요 : ')
@@ -21,7 +22,7 @@ file_data = file.read().splitlines()
 forti_addr = [x for x in file_data if 'network-object' in x]
 forti_addr = [x.lstrip() for x in forti_addr]
 for i in forti_addr:  # is not in subnet each element, + /32 or is there subnet, then store another list
-    if
+    pass
 print('config firewall Address', '\n', 'edit name {0}', '\n\t', 'set subnet {1}', '\n',
       'next')
 
