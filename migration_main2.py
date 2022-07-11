@@ -6,5 +6,4 @@ class ASA_migration:
         self.forti_addr = forti_addr
         self.forti_grp = forti_grp
     def asa_readfile(self, file):
-
-
+        pass
