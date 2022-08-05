@@ -1,4 +1,5 @@
 import re
+import juniper
 
 # file_lo = input('파일의 경로를 입력하세요 : ')
 # file_name = input('파일의 이름을 입력하세요 : ')
@@ -12,13 +13,14 @@ forti_policy = []
 forti_route = []
 line = None
 
-# file = open('C:\\Users\\hsyu5\\Desktop\\미디어윌 ASA 5505 본체.txt', mode='r')
-
 if __name__ == '__main__':
-    file = open('C:\\Users\\hsyu5\\Desktop\\KG passone.txt', 'r')
-    line = file.read()
-    print(line)
-
+    pass
+    # file = open('C:\\Users\\hsyu5\\Desktop\\KG passone.txt', 'r')
+    file = open('C:\\Users\\유형석\\Desktop\\KG passone.txt', 'r')
+    line = file.readlines()
+    jun = juniper.juniper()
+    new_file = open('C:\\Users\\유형석\\Desktop\\test.txt', 'w')
+    jun.trans_addr(line, new_file)
     file.close()
 
 # file_data = file.read().splitlines()
@@ -26,7 +28,7 @@ if __name__ == '__main__':
 # forti_addr = [x.lstrip() for x in forti_addr]
 # for i in forti_addr:  # is not in subnet each element, + /32 or is there subnet, then store another list
 #     pass
-# print('config firewall Address', '\n', 'edit name {0}', '\n\t', 'set subnet {1}', '\n',
+# print('config firewall Address', '\n', 'edit name {0}', '\n\t', 'set subnet {1}', 'u\n',
 #       'next')
 
 # while line != '':
