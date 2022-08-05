@@ -1,7 +1,4 @@
-import sys
-import math
 import re
-import time
 
 # file_lo = input('파일의 경로를 입력하세요 : ')
 # file_name = input('파일의 이름을 입력하세요 : ')
@@ -15,20 +12,23 @@ forti_policy = []
 forti_route = []
 line = None
 
-start_time = time.time()
-file = open('C:\\Users\\hsyu5\\Desktop\\미디어윌 ASA 5505 본체.txt', mode='r')
-file_data = file.read().splitlines()
-#
-forti_addr = [x for x in file_data if 'network-object' in x]
-forti_addr = [x.lstrip() for x in forti_addr]
-for i in forti_addr:  # is not in subnet each element, + /32 or is there subnet, then store another list
-    pass
-print('config firewall Address', '\n', 'edit name {0}', '\n\t', 'set subnet {1}', '\n',
-      'next')
+# file = open('C:\\Users\\hsyu5\\Desktop\\미디어윌 ASA 5505 본체.txt', mode='r')
 
-end_time = time.time()
+if __name__ == '__main__':
+    file = open('C:\\Users\\hsyu5\\Desktop\\KG passone.txt', 'r')
+    line = file.read()
+    print(line)
 
-print(f"{end_time - start_time: .5f} sec")
+    file.close()
+
+# file_data = file.read().splitlines()
+# forti_addr = [x for x in file_data if 'network-object' in x]
+# forti_addr = [x.lstrip() for x in forti_addr]
+# for i in forti_addr:  # is not in subnet each element, + /32 or is there subnet, then store another list
+#     pass
+# print('config firewall Address', '\n', 'edit name {0}', '\n\t', 'set subnet {1}', '\n',
+#       'next')
+
 # while line != '':
 #     line = file.readline()
 #     line2 = line.rstrip('\n')
