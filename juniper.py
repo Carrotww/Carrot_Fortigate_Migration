@@ -12,16 +12,11 @@ class juniper:
         for i in fgt_addr:
             print('config firewall address', '\n','edit name {0}'.format(i[3]), '\n\t',
                   'set subnet {0} {1}'.format(i[4], i[5]), '\n', 'next')
-            new_line.write('edit ')
-            new_line.write(i[3])
-            new_line.write('\n')
-            new_line.write('set subnet ')
-            new_line.write(i[4])
-            new_line.write(' ')
-            new_line.write(i[5])
-            new_line.write('\n')
-            new_line.write('next\n')
+
+            new_line.write(f'edit {i[3]}\nset subnet {i[4]} {i[5]}\nnext\n')
         new_line.write('\n')
+        return
+
 
     def trans_service(self, line) -> List:
         re_service = re.compile("service")
