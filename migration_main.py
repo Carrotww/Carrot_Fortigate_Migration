@@ -1,4 +1,5 @@
 import re
+import sys
 import juniper
 
 # file_lo = input('파일의 경로를 입력하세요 : ')
@@ -14,13 +15,15 @@ forti_route = []
 line = None
 
 if __name__ == '__main__':
-    pass
     # file = open('C:\\Users\\hsyu5\\Desktop\\KG passone.txt', 'r')
-    file = open('C:\\Users\\유형석\\Desktop\\KG passone.txt', 'r')
+    # file_path = input("Enter the file path : ") # File path input line
+    file = open('C:\\Users\\K1220004\\Desktop\\KG passone.txt', 'r') # company desktop file path
+    # file = open(file_path, 'r')
     line = file.readlines()
     jun = juniper.juniper()
-    new_file = open('C:\\Users\\유형석\\Desktop\\test.txt', 'w')
-    jun.trans_addr(line, new_file)
+    new_file = open('C:\\Users\\K1220004\\Desktop\\test.txt', 'w')
+    a = jun.trans_addr(line, new_file)
+    print(a)
     file.close()
 
 # file_data = file.read().splitlines()
