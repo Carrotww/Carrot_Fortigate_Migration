@@ -15,7 +15,6 @@ class juniper:
 
             new_line.write(f'edit {i[3]}\nset subnet {i[4]} {i[5]}\nnext\n')
         new_line.write('\n')
-        return
 
 
     def trans_service(self, line) -> List:
