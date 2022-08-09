@@ -24,3 +24,4 @@ class juniper:
 
     def trans_manageip(self, line) -> List:
         re_manageip = re.compile("")
+        
