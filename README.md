@@ -3,8 +3,8 @@
 > - ASA -> FGT
 
 ### Implemented Features
-- addr converter
+- addr converter : done
+- addr group converter : done
 
 ### Features to be added later
-> 1. addr group converter
-> 2. policy converter
+> 1. policy converter
