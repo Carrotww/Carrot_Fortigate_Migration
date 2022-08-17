@@ -11,12 +11,16 @@ class juniper:
         new_file = open(f'C:\\Users\\유형석\\Desktop\\{new_file_name}.txt', 'w')
         fgt_addr = [i.split() for i in line if "set address" in i]
         new_file.write('config firewall address\n')
+        fqdn = ''
 
         for i in fgt_addr:
             # print('config firewall address', '\n','edit name {0}'.format(i[3]), '\n\t',
             #       'set subnet {0} {1}'.format(i[4], i[5]), '\n', 'next')
             #  #  프린트 하는 부분
-            new_file.write(f'edit {i[3]}\nset subnet {i[4]} {i[5]}\nnext\n')
+            if i[4] != fqdn:
+                new_file.write(f'edit {i[3]}\nset type fqdn\nset fqdn {i[4]}\nnext\n')
+            else:
+                new_file.write(f'edit {i[3]}\nset subnet {i[4]} {i[5]}\nnext\n')
         new_file.write('\n')
         new_file.close()
 
