@@ -11,12 +11,13 @@ class juniper:
         new_file = open(f'C:\\Users\\K1220006\\Desktop\\{new_file_name}.txt', 'w')
         fgt_addr = [i.split() for i in line if "set address" in i]
         new_file.write('config firewall address\n')
+        ip_match = re.compile(r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
 
         for i in fgt_addr:
             # print('config firewall address', '\n','edit name {0}'.format(i[3]), '\n\t',
             #       'set subnet {0} {1}'.format(i[4], i[5]), '\n', 'next')
             #  #  프린트 하는 부분
-            if re.match(r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$", i[4]):
+            if re.match(ip_match, i[4]):
                 new_file.write(f'edit {i[3]}\nset subnet {i[4]} {i[5]}\nnext\n')
             else:
                 new_file.write(f'edit {i[3]}\nset type fqdn\nset fqdn {i[4]}\nnext\n')
@@ -50,3 +51,16 @@ class juniper:
 
     def trans_manageip(self, line) -> List:
         re_manageip = re.compile("")
+
+# import re
+#
+# temp = ['set address "V1-Untrust" "61.83.243.126/32" 61.83.243.126 255.255.255.255',
+# 'set address "V1-Untrust" "android.googleapis.com" android.googleapis.com ',
+# 'set address "V1-Trust" "F5 LBS" 116.121.60.15 255.255.255.255 "F5 LBS"']
+#
+# ipmatch = re.compile(r"(?:[0-9]{1,3}\.){3}[0-9]{1,3}")
+# testmatch = re.compile("^'"'\s'"'$")
+#
+# for i in temp:
+#     a = re.sub(testmatch, "_", i)
+#     print(a)
