@@ -40,11 +40,17 @@ if __name__ == '__main__':
 # print('config firewall Address', '\n', 'edit name {0}', '\n\t', 'set subnet {1}', 'u\n',
 #       'next')
 
-# while line != '':
-#     line = file.readline()
-#     line2 = line.rstrip('\n')
-#     if 'network-object' in line2:
-#         forti_addr.append(line2)
-#         print(line2)
-#     elif 'object-group network' in line:
-#         pass
+# for line in test:
+#     s_result = []
+#     i = 0
+#     while i < len(line):
+#         temp_str = line[i]
+#         if line[i][0] == '"' and line[i][-1] != '"':
+#             i += 1
+#             while line[i][-1] != '"':
+#                 temp_str += line[i]
+#                 i += 1
+#             temp_str += line[i]
+#         i += 1
+#         s_result.append(temp_str)
+#     result.append(s_result)
