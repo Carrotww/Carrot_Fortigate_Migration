@@ -18,18 +18,16 @@ if __name__ == '__main__':
     # file_path = input("Enter the file path : ") # File path input line
     # file = open('C:\\Users\\hsyu5\\Desktop\\KG passone.txt', 'r')
     # file = open('C:\\Users\\K1220004\\Desktop\\KG passone.txt', 'r') # company desktop file path
-    file = open('C:\\Users\\유형석\\Desktop\\KG passone.txt', 'r') # home desktop file path
-    # file = open(file_path, 'r')
+    file = open('C:\\Users\\K1220006\\Desktop\\위비스 config.txt', 'r') # home desktop file path
 
     line = file.readlines() # line = file을 읽어와 한 줄 씩 부여줌
     jun = juniper.juniper() # import juniper class juniper
-    # new_file = open('C:\\Users\\K1220004\\Desktop\\test.txt', 'w')
-    # fgt_addr_filename = input("Enter the New addr_filename : ")
-    fgt_addrgrp_filename = 'addrgrp_test'
+    fgt_addr_filename = input("Enter the New addr_filename : ")
+    fgt_addrgrp_filename = input("Enter the New addrgrp_filename : ")
 
-    # fgt_addr = jun.trans_addr(line, fgt_addr_filename)
+    fgt_addr = jun.trans_addr(line, fgt_addr_filename)
     fgt_addrgrp = jun.trans_addrgrp(line, fgt_addrgrp_filename)
-    print(fgt_addrgrp)
+    # print(fgt_addrgrp)
     # print(fgt_addr)
 
     file.close()
