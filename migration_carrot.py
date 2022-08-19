@@ -1,5 +1,6 @@
 import re
 import os
+import sys
 import time
 from typing import List
 import collections
@@ -97,8 +98,13 @@ if __name__ == '__main__':
             if name in filename:
                 return os.path.join(dirpath, name)
             elif cur_time >= (start + 10):
-                return "파일명을 다시 확인해 주세요 - hyeongseok"
+                print('Please check the file name and it''s in C drive.')
+                print('-유형석 선임-')
+                time.sleep(5)
+                sys.exit(0)
 
+    print('Made by hyeongseok')
+    print('The file must be in the C: drive and write the name including .txt')
     config_file_name = input("Enter the file name : ") # File path input line
     file_full_path = findfile(f"{config_file_name}", "C:\\") # config file path
     file_path = file_full_path.split(config_file_name)[0]
@@ -115,5 +121,8 @@ if __name__ == '__main__':
     fgt_addrgrp = jun.trans_addrgrp(line, file_path, fgt_addrgrp_filename)
     # print(fgt_addrgrp)
     # print(fgt_addr)
-
     file.close()
+    print('Going Shutdown...')
+    print('-유형석 선임-')
+    time.sleep(3)
+    sys.exit(0)
