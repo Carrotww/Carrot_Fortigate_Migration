@@ -69,7 +69,7 @@ if __name__ == '__main__':
                 result.append(s_result)
             fgt_addrgrp = collections.defaultdict(list)
 
-            new_file.write('config firewall address\n')
+            new_file.write('config firewall addrgrp\n')
             for temp in result:
                 if len(temp) == 7 and temp[5] == 'add':
                     fgt_addrgrp[temp[4]].append(temp[6])
