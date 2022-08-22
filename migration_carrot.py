@@ -6,6 +6,10 @@ from typing import List
 import collections
 
 if __name__ == '__main__':
+    if getattr(sys, 'frozen', False):
+        pro_dir = os.path.dirname(os.path.abspath(sys.executable))
+    else:
+        pro_dir = os.path.dirname(os.path.abspath(__file__))
     class juniper:
         def __init__(self):
             pass
